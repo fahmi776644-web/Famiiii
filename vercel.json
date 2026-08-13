@@ -1,5 +1,8 @@
 {
   "version": 2,
+  "public": false,
+  "buildCommand": "echo 'Static site - no build needed'",
+  "outputDirectory": "./",
   "headers": [
     {
       "source": "/index.html",
@@ -7,6 +10,19 @@
         {
           "key": "Content-Type",
           "value": "text/html; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
         }
       ]
     }
